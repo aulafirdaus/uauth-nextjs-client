@@ -17,7 +17,7 @@ export default function UAuth<P extends UAuthProfile>(
     name: "UAuth",
     type: "oidc",
     authorization: {
-      params: { scope: "openid profile email" },
+      params: { scope: "openid profile email roles groups" },
     },
     checks: ["pkce", "state", "nonce"],
     profile(profile) {
