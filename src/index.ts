@@ -5,6 +5,8 @@ export interface UAuthProfile extends Record<string, any> {
   name: string;
   email: string;
   picture: string;
+  role?: string | string[];
+  group?: string | string[];
 }
 
 export default function UAuth<P extends UAuthProfile>(
@@ -24,6 +26,8 @@ export default function UAuth<P extends UAuthProfile>(
         name: profile.name,
         email: profile.email,
         image: profile.picture,
+        role: profile.role,
+        group: profile.group,
       };
     },
     ...options,
